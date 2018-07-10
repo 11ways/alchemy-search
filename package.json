@@ -1,0 +1,19 @@
+{
+	"name": "alchemy-search",
+	"description": "The search plugin for Alchemy",
+	"version": "0.1.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/skerit/alchemy-search.git"
+	},
+	"dependencies": {
+		"double-metaphone" : "~1.0.1"
+	},
+	"peerDependencies": {
+		"alchemymvc": "~1.0.3"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": "~8.9.0"
+	}
+}
