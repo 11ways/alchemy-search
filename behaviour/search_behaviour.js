@@ -422,7 +422,7 @@ Search.setMethod(function afterSave(record, options, created) {
 	    next = this.wait();
 
 	// Find the complete saved item
-	Model.get(that.model.name).find('first', {conditions: {_id: record._id}}, function gotFullRecord(err, result) {
+	Model.get(that.model.name).findById(record._id, function gotFullRecord(err, result) {
 
 		if (err) {
 			return next(err);
