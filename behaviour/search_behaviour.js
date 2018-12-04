@@ -414,7 +414,7 @@ Search.setStatic(function attached(schema, options) {
  *
  * @author   Jelle De Loecker   <jelle@develry.be>
  * @since    0.1.0
- * @version  0.1.0
+ * @version  0.1.1
  */
 Search.setMethod(function afterSave(record, options, created) {
 
@@ -472,6 +472,8 @@ Search.setMethod(function afterSave(record, options, created) {
 					weight     : weight
 				};
 
+				let is_html = field.constructor.name == 'HtmlFieldType';
+
 				if (field.isTranslatable) {
 
 					// Should be an object. If it's not, skip it
@@ -486,9 +488,18 @@ Search.setMethod(function afterSave(record, options, created) {
 							continue;
 						}
 
+						if (is_html && typeof prefix_value == 'string') {
+							prefix_value = prefix_value.stripTags(false, ' ').decodeHTML();
+						}
+
 						saveValue(prefix_value, data, prefix);
 					}
 				} else {
+
+					if (is_html && value && typeof value == 'string') {
+						value = value.stripTags(false, ' ').decodeHTML();
+					}
+
 					saveValue(value, data);
 				}
 			}
