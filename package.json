@@ -1,7 +1,7 @@
 {
 	"name": "alchemy-search",
 	"description": "The search plugin for Alchemy",
-	"version": "0.1.1-alpha",
+	"version": "0.2.0-alpha",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/skerit/alchemy-search.git"

@@ -24,7 +24,7 @@ Search.constitute(function addFields() {
 	this.addField('model', 'String');
 
 	// The original record id
-	this.addField('record_id', 'ObjectID');
+	this.addField('record_id', 'ObjectId');
 
 	// The field name
 	this.addField('field_name', 'String');

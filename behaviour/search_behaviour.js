@@ -24,11 +24,11 @@ var Search = Function.inherits('Alchemy.Behaviour', function SearchBehaviour(mod
  */
 Search.setStatic(function attached(schema, options) {
 
-	if (!schema.modelClass) {
+	if (!schema.model_class) {
 		return;
 	}
 
-	schema.modelClass.setMethod(function search(config, options, callback) {
+	schema.model_class.setMethod(function search(config, options, callback) {
 
 		var search_results,
 		    datasource,
@@ -474,7 +474,7 @@ Search.setMethod(function afterSave(record, options, created) {
 
 				let is_html = field.constructor.name == 'HtmlFieldType';
 
-				if (field.isTranslatable) {
+				if (field.is_translatable) {
 
 					// Should be an object. If it's not, skip it
 					if (!Object.isPlainObject(value)) {
